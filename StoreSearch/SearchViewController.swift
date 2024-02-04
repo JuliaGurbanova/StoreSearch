@@ -122,15 +122,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
-
             let searchResult = searchResults[indexPath.row]
-            cell.nameLabel.text = searchResult.name
+            cell.configure(for: searchResult)
 
-            if searchResult.artist.isEmpty {
-                cell.artistNameLabel.text = "Unknown"
-            } else {
-                cell.artistNameLabel.text = String(format: "%@ (%@)", searchResult.artist, searchResult.type)
-            }
             return cell
         }
     }
@@ -157,7 +151,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         default: kind = ""
         }
 
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=500&entity=\(kind)", searchText)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=100&entity=\(kind)", searchText)
         let url = URL(string: urlString)
         return url!
     }
