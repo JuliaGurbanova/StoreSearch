@@ -18,6 +18,7 @@
 		C18520222B6BD2190005018F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C18520202B6BD2190005018F /* LaunchScreen.storyboard */; };
 		C185202A2B6BDE2E0005018F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18520292B6BDE2E0005018F /* SearchResult.swift */; };
 		C185202C2B6BE2340005018F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C185202B2B6BE2340005018F /* SearchResultCell.xib */; };
+		C1AF0D4A2B6E75C300EF7BBA /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C18520232B6BD2190005018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C18520292B6BDE2E0005018F /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		C185202B2B6BE2340005018F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +71,10 @@
 				C18520122B6BD2180005018F /* AppDelegate.swift */,
 				C18520142B6BD2180005018F /* SceneDelegate.swift */,
 				C18520162B6BD2180005018F /* SearchViewController.swift */,
-				C147A91D2B6D330900202C0B /* SearchResultCell.swift */,
 				C18520292B6BDE2E0005018F /* SearchResult.swift */,
+				C147A91D2B6D330900202C0B /* SearchResultCell.swift */,
 				C18520182B6BD2180005018F /* Main.storyboard */,
+				C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */,
 				C185202B2B6BE2340005018F /* SearchResultCell.xib */,
 				C147A91F2B6D368700202C0B /* NothingFoundCell.xib */,
 				C185201E2B6BD2190005018F /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				C18520222B6BD2190005018F /* LaunchScreen.storyboard in Resources */,
 				C185201F2B6BD2190005018F /* Assets.xcassets in Resources */,
+				C1AF0D4A2B6E75C300EF7BBA /* LoadingCell.xib in Resources */,
 				C185202C2B6BE2340005018F /* SearchResultCell.xib in Resources */,
 				C147A9202B6D368700202C0B /* NothingFoundCell.xib in Resources */,
 				C185201A2B6BD2180005018F /* Main.storyboard in Resources */,
