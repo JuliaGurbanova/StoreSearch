@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b1j-7B-DqC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="b1j-7B-DqC">
+                                <rect key="frame" x="0.0" y="51" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="buP-LN-P7N"/>
@@ -34,14 +34,37 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7te-DE-I2O"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ9-4Q-KwY">
+                                <rect key="frame" x="0.0" y="76" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="Qk7-OB-fKH">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xNR-TP-6ui">
+                                            <rect key="frame" x="16" y="5.5" width="343" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-books"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="0f0-Om-9N9"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yEM-V6-x7d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1cO-6Z-J8T"/>
                             <constraint firstItem="yEM-V6-x7d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Tt-po-QWF"/>
+                            <constraint firstItem="VJ9-4Q-KwY" firstAttribute="top" secondItem="yEM-V6-x7d" secondAttribute="bottom" id="8Zh-eE-KZw"/>
+                            <constraint firstItem="VJ9-4Q-KwY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kri-bI-Tm5"/>
                             <constraint firstItem="b1j-7B-DqC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SDg-hL-IQJ"/>
                             <constraint firstItem="b1j-7B-DqC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VzK-mM-RsT"/>
+                            <constraint firstItem="VJ9-4Q-KwY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aja-k6-B0L"/>
                             <constraint firstItem="b1j-7B-DqC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sSG-N4-K5t"/>
                             <constraint firstItem="yEM-V6-x7d" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wfX-hh-Lk7"/>
                             <constraint firstItem="b1j-7B-DqC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xwC-We-dhI"/>
@@ -49,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="yEM-V6-x7d" id="Esw-3a-l1J"/>
+                        <outlet property="segmentedControl" destination="xNR-TP-6ui" id="8sQ-Y9-Zyi"/>
                         <outlet property="tableView" destination="b1j-7B-DqC" id="kZY-fj-cL1"/>
                     </connections>
                 </viewController>

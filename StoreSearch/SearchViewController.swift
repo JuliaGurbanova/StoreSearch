@@ -15,10 +15,10 @@ class SearchViewController: UIViewController {
             static let loadingCell = "LoadingCell"
         }
     }
-
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     var searchResults = [SearchResult]()
     var hasSearched = false
     var isLoading = false
@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.contentInset = UIEdgeInsets(top: 47, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 91, left: 0, bottom: 0, right: 0)
         var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
@@ -38,12 +38,20 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
     }
 
-
+    // MARK: - Actions
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        performSearch()
+    }
+    
 }
 
 // MARK: - Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        performSearch()
+    }
+
+    func performSearch() {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
 
@@ -54,7 +62,7 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
 
-            let url = iTunesURL(searchText: searchBar.text!)
+            let url = iTunesURL(searchText: searchBar.text!, category: segmentedControl.selectedSegmentIndex)
             let session = URLSession.shared
             dataTask = session.dataTask(with: url) { data, response, error in
                 if let error = error as NSError?, error.code == -999 {
@@ -140,8 +148,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     // MARK: - Networking
-    func iTunesURL(searchText: String) -> URL {
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=500", searchText)
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        let kind: String
+        switch category {
+        case 1: kind = "musicTrack"
+        case 2: kind = "software"
+        case 3: kind = "ebook"
+        default: kind = ""
+        }
+
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=500&entity=\(kind)", searchText)
         let url = URL(string: urlString)
         return url!
     }
