@@ -42,7 +42,65 @@ class SearchViewController: UIViewController {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         performSearch()
     }
-    
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetail" {
+            let detailViewController = segue.destination as! DetailViewController
+            let indexPath = sender as! IndexPath
+            let searchResult = searchResults[indexPath.row]
+            detailViewController.searchResult = searchResult
+        }
+    }
+
+    // MARK: - Networking
+    func iTunesURL(searchText: String, category: Int) -> URL {
+        let kind: String
+        switch category {
+        case 1: kind = "musicTrack"
+        case 2: kind = "software"
+        case 3: kind = "ebook"
+        default: kind = ""
+        }
+
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=100&entity=\(kind)", searchText)
+        let url = URL(string: urlString)
+        return url!
+    }
+
+//    func performStoreRequest(with url: URL) -> Data? {
+//        do {
+//            return try Data(contentsOf: url)
+//        } catch {
+//            print("Download Error: \(error.localizedDescription)")
+//            showNetworkError()
+//            return nil
+//        }
+//    }
+
+    func parse(data: Data) -> [SearchResult] {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(ResultArray.self, from: data)
+            return result.results
+        } catch {
+            print("JSON Error: \(error)")
+            return []
+        }
+    }
+
+    func showNetworkError() {
+        let alert = UIAlertController(
+            title: "Whoops...",
+            message: "There was an error accessing the iTunes Store. Please try again.",
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(title: "OK", style: .default)
+
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
 }
 
 // MARK: - Search Bar Delegate
@@ -131,6 +189,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ShowDetail", sender: indexPath)
     }
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -139,54 +198,5 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return indexPath
         }
-    }
-
-    // MARK: - Networking
-    func iTunesURL(searchText: String, category: Int) -> URL {
-        let kind: String
-        switch category {
-        case 1: kind = "musicTrack"
-        case 2: kind = "software"
-        case 3: kind = "ebook"
-        default: kind = ""
-        }
-
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=100&entity=\(kind)", searchText)
-        let url = URL(string: urlString)
-        return url!
-    }
-
-//    func performStoreRequest(with url: URL) -> Data? {
-//        do {
-//            return try Data(contentsOf: url)
-//        } catch {
-//            print("Download Error: \(error.localizedDescription)")
-//            showNetworkError()
-//            return nil
-//        }
-//    }
-
-    func parse(data: Data) -> [SearchResult] {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode(ResultArray.self, from: data)
-            return result.results
-        } catch {
-            print("JSON Error: \(error)")
-            return []
-        }
-    }
-
-    func showNetworkError() {
-        let alert = UIAlertController(
-            title: "Whoops...",
-            message: "There was an error accessing the iTunes Store. Please try again.",
-            preferredStyle: .alert
-        )
-
-        let action = UIAlertAction(title: "OK", style: .default)
-
-        alert.addAction(action)
-        present(alert, animated: true)
     }
 }
