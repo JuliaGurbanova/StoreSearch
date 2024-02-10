@@ -20,6 +20,9 @@
 		C185201F2B6BD2190005018F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C185201E2B6BD2190005018F /* Assets.xcassets */; };
 		C185202A2B6BDE2E0005018F /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18520292B6BDE2E0005018F /* SearchResult.swift */; };
 		C185202C2B6BE2340005018F /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C185202B2B6BE2340005018F /* SearchResultCell.xib */; };
+		C18FFD052B779DF700CA47FD /* LandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18FFD042B779DF700CA47FD /* LandscapeViewController.swift */; };
+		C18FFD072B77A9D400CA47FD /* FadeOutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18FFD062B77A9D400CA47FD /* FadeOutAnimationController.swift */; };
+		C18FFD092B77D72D00CA47FD /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18FFD082B77D72D00CA47FD /* Search.swift */; };
 		C1AF0D4A2B6E75C300EF7BBA /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */; };
 		C1D1DBE32B6FC42400F21655 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1DBE22B6FC42400F21655 /* UIImageView+DownloadImage.swift */; };
 		C1D1DBE52B6FCF8100F21655 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D1DBE42B6FCF8100F21655 /* DetailViewController.swift */; };
@@ -41,6 +44,9 @@
 		C18520232B6BD2190005018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C18520292B6BDE2E0005018F /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		C185202B2B6BE2340005018F /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		C18FFD042B779DF700CA47FD /* LandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeViewController.swift; sourceTree = "<group>"; };
+		C18FFD062B77A9D400CA47FD /* FadeOutAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeOutAnimationController.swift; sourceTree = "<group>"; };
+		C18FFD082B77D72D00CA47FD /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		C1D1DBE22B6FC42400F21655 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 		C1D1DBE42B6FCF8100F21655 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -80,12 +86,15 @@
 				C18520142B6BD2180005018F /* SceneDelegate.swift */,
 				C18520162B6BD2180005018F /* SearchViewController.swift */,
 				C1D1DBE42B6FCF8100F21655 /* DetailViewController.swift */,
+				C18FFD042B779DF700CA47FD /* LandscapeViewController.swift */,
 				C18520292B6BDE2E0005018F /* SearchResult.swift */,
+				C18FFD082B77D72D00CA47FD /* Search.swift */,
 				C147A91D2B6D330900202C0B /* SearchResultCell.swift */,
 				C1D1DBE22B6FC42400F21655 /* UIImageView+DownloadImage.swift */,
 				C147F4742B712939005238CD /* GradientView.swift */,
 				C147F4762B712BBC005238CD /* BounceAnimationController.swift */,
 				C147F4782B712E69005238CD /* SlideOutAnimationController.swift */,
+				C18FFD062B77A9D400CA47FD /* FadeOutAnimationController.swift */,
 				C18520182B6BD2180005018F /* Main.storyboard */,
 				C1AF0D492B6E75C300EF7BBA /* LoadingCell.xib */,
 				C185202B2B6BE2340005018F /* SearchResultCell.xib */,
@@ -179,8 +188,11 @@
 				C147A91E2B6D330900202C0B /* SearchResultCell.swift in Sources */,
 				C185201D2B6BD2180005018F /* StoreSearch.xcdatamodeld in Sources */,
 				C147F4792B712E69005238CD /* SlideOutAnimationController.swift in Sources */,
+				C18FFD072B77A9D400CA47FD /* FadeOutAnimationController.swift in Sources */,
 				C1D1DBE52B6FCF8100F21655 /* DetailViewController.swift in Sources */,
+				C18FFD052B779DF700CA47FD /* LandscapeViewController.swift in Sources */,
 				C147F4752B712939005238CD /* GradientView.swift in Sources */,
+				C18FFD092B77D72D00CA47FD /* Search.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
