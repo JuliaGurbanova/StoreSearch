@@ -64,23 +64,23 @@ class SearchResult: Codable, CustomStringConvertible {
     }
 
     var type: String {
-        let kind = self.kind ?? "audiobook"
+        let kind = self.kind ?? String(localized: "audiobook")
 
         switch kind {
-        case "album": return "Album"
-        case "audiobook": return "Audiobook"
-        case "book": return "Book"
-        case "ebook": return "E-Book"
-        case "feature-movie": return "Movie"
-        case "music-video": return "Music Video"
-        case "podcast": return "Podcast"
-        case "software": return "App"
-        case "song": return "Song"
-        case "tv-episode": return "TV Episode"
+        case "album": return String(localized: "Album")
+        case "audiobook": return String(localized: "Audiobook")
+        case "book": return String(localized: "Book")
+        case "ebook": return String(localized: "E-Book")
+        case "feature-movie": return String(localized: "Movie")
+        case "music-video": return String(localized: "Music Video")
+        case "podcast": return String(localized: "Podcast")
+        case "software": return String(localized: "App")
+        case "song": return String(localized: "Song")
+        case "tv-episode": return String(localized: "TV Episode")
         default: break
         }
 
-        return "Unknown"
+        return String(localized: "Unknown")
     }
 
     var artist: String {

@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "7LL-Qy-hsM.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Loading...\"; ObjectID = \"7LL-Qy-hsM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Loading..."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка..."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

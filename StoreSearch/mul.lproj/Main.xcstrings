@@ -1,0 +1,240 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "4ym-zl-Su8.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Type:\"; ObjectID = \"4ym-zl-Su8\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Type:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип:"
+          }
+        }
+      }
+    },
+    "est-Wx-R9y.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Genre:\"; ObjectID = \"est-Wx-R9y\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Genre:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Жанр:"
+          }
+        }
+      }
+    },
+    "iaW-tV-tOQ.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Name\"; ObjectID = \"iaW-tV-tOQ\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Name"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название"
+          }
+        }
+      }
+    },
+    "lab-jx-oD5.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"$9.99\"; ObjectID = \"lab-jx-oD5\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "$9.99"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "$9.99"
+          }
+        }
+      }
+    },
+    "Nos-rz-3hw.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Kind Value\"; ObjectID = \"Nos-rz-3hw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Kind Value"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kind Value"
+          }
+        }
+      }
+    },
+    "sRd-FG-sJj.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"sRd-FG-sJj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "sxi-pT-NDx.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Artist Name\"; ObjectID = \"sxi-pT-NDx\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Artist Name"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artist Name"
+          }
+        }
+      }
+    },
+    "wgn-1Q-igt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Genre Value\"; ObjectID = \"wgn-1Q-igt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Genre Value"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genre Value"
+          }
+        }
+      }
+    },
+    "xNR-TP-6ui.segmentTitles[0]" : {
+      "comment" : "Class = \"UISegmentedControl\"; xNR-TP-6ui.segmentTitles[0] = \"All\"; ObjectID = \"xNR-TP-6ui\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все"
+          }
+        }
+      }
+    },
+    "xNR-TP-6ui.segmentTitles[1]" : {
+      "comment" : "Class = \"UISegmentedControl\"; xNR-TP-6ui.segmentTitles[1] = \"Music\"; ObjectID = \"xNR-TP-6ui\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Music"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Музыка"
+          }
+        }
+      }
+    },
+    "xNR-TP-6ui.segmentTitles[2]" : {
+      "comment" : "Class = \"UISegmentedControl\"; xNR-TP-6ui.segmentTitles[2] = \"Software\"; ObjectID = \"xNR-TP-6ui\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Software"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приложения"
+          }
+        }
+      }
+    },
+    "xNR-TP-6ui.segmentTitles[3]" : {
+      "comment" : "Class = \"UISegmentedControl\"; xNR-TP-6ui.segmentTitles[3] = \"E-books\"; ObjectID = \"xNR-TP-6ui\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "E-books"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Эл.книги"
+          }
+        }
+      }
+    },
+    "yEM-V6-x7d.placeholder" : {
+      "comment" : "Class = \"UISearchBar\"; placeholder = \"App name, artist, song, album, e-book\"; ObjectID = \"yEM-V6-x7d\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "App name, artist, song, album, e-book"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Название приложения, песни, исполнителя, альбома, эл.книги"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
