@@ -43,13 +43,14 @@ class Search {
     // MARK: - Networking
     private func iTunesURL(searchText: String, category: Category) -> URL {
         let locale = Locale.autoupdatingCurrent
-        let language = locale.identifier
+//        let language = locale.identifier
         let countryCode = locale.regionCode ?? "en_US"
         let kind = category.type
+//        &lang=\(language)
 
-        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200&entity=\(kind)&lang=\(language)&country=\(countryCode)", searchText)
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@&limit=200&entity=\(kind)&country=\(countryCode)", searchText)
         let url = URL(string: urlString)
-        print("URL: \(urlString)")
+//        print("URL: \(urlString)")
         return url!
     }
 

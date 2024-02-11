@@ -19,6 +19,24 @@
         }
       }
     },
+    "bcW-PL-fGj.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Rate This App\"; ObjectID = \"bcW-PL-fGj\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rate This App"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцените приложение"
+          }
+        }
+      }
+    },
     "est-Wx-R9y.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Genre:\"; ObjectID = \"est-Wx-R9y\";",
       "extractionState" : "extracted_with_value",
@@ -33,6 +51,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Жанр:"
+          }
+        }
+      }
+    },
+    "evV-tG-ccr.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Send Support E-mail\"; ObjectID = \"evV-tG-ccr\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Send Support E-mail"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отправить письмо в Техподдержку"
           }
         }
       }
@@ -87,6 +123,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kind Value"
+          }
+        }
+      }
+    },
+    "PeA-eK-O5p.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"About\"; ObjectID = \"PeA-eK-O5p\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О приложении"
           }
         }
       }

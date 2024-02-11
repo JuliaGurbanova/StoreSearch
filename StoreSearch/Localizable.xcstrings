@@ -111,12 +111,34 @@
         }
       }
     },
+    "Search" : {
+      "comment" : "split view primary button",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
+          }
+        }
+      }
+    },
     "Song" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Песня"
+          }
+        }
+      }
+    },
+    "Support Request" : {
+      "comment" : "Email subject",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обращение в Техподдержку"
           }
         }
       }

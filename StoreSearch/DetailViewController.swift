@@ -5,6 +5,7 @@
 //  Created by Julia Gurbanova on 04.02.2024.
 //
 
+import MessageUI
 import UIKit
 
 class DetailViewController: UIViewController {
@@ -21,9 +22,17 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
 
-    var searchResult: SearchResult!
+    var searchResult: SearchResult! {
+        didSet {
+            if isViewLoaded {
+                updateUI()
+            }
+        }
+    }
+
     var downloadTask: URLSessionDownloadTask?
     var dismissStyle = AnimationStyle.fade
+    var isPopUp = false
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -33,21 +42,28 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        popupView.layer.cornerRadius = 10
+        if isPopUp {
+            popupView.layer.cornerRadius = 10
 
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
-        gestureRecognizer.cancelsTouchesInView = false
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            gestureRecognizer.cancelsTouchesInView = false
+            gestureRecognizer.delegate = self
+            view.addGestureRecognizer(gestureRecognizer)
+
+            view.backgroundColor = UIColor.clear
+            let dimmingView = GradientView(frame: CGRect.zero)
+            dimmingView.frame = view.bounds
+            view.insertSubview(dimmingView, at: 0)
+        } else {
+            view.backgroundColor = UIColor(patternImage: UIImage(named: "LandscapeBackground")!)
+            popupView.isHidden = true
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showPopover))
+        }
 
         if searchResult != nil {
             updateUI()
         }
-
-        view.backgroundColor = UIColor.clear
-        let dimmingView = GradientView(frame: CGRect.zero)
-        dimmingView.frame = view.bounds
-        view.insertSubview(dimmingView, at: 0)
     }
 
 
@@ -61,6 +77,17 @@ class DetailViewController: UIViewController {
         if let url = URL(string: searchResult.storeURL) {
             UIApplication.shared.open(url, options: [:])
         }
+    }
+
+    @objc func showPopover(_ sender: UIBarButtonItem) {
+        guard let popover = storyboard?.instantiateViewController(withIdentifier: "PopoverView") as? MenuViewController else { return }
+        popover.modalPresentationStyle = .popover
+
+        if let ppc = popover.popoverPresentationController {
+            ppc.barButtonItem = sender
+        }
+        popover.delegate = self
+        present(popover, animated: true)
     }
 
     // MARK: - Helper Methods
@@ -94,6 +121,8 @@ class DetailViewController: UIViewController {
         if let largeURL = URL(string: searchResult.imageLarge) {
             downloadTask = artworkImageView.loadImage(url: largeURL)
         }
+
+        popupView.isHidden = false
     }
 
     deinit {
@@ -123,5 +152,27 @@ extension DetailViewController: UIViewControllerTransitioningDelegate {
         case .fade:
             return FadeOutAnimationController()
         }
+    }
+}
+
+// MARK: - Menu View Controller Delegate
+extension DetailViewController: MenuViewControllerDelegate {
+    func menuViewControllerSendEmail(_ controller: MenuViewController) {
+        dismiss(animated: true) {
+            if MFMailComposeViewController.canSendMail() {
+                let controller = MFMailComposeViewController()
+                controller.mailComposeDelegate = self
+                controller.setSubject(String(localized: "Support Request", comment: "Email subject"))
+                controller.setToRecipients(["julia.gurbanova@gmail.com"])
+                self.present(controller, animated: true)
+            }
+        }
+    }
+}
+
+// MARK: - MFMailCompose View Controller Delegate
+extension DetailViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true)
     }
 }
